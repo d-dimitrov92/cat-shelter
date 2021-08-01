@@ -27,12 +27,21 @@
     color: black;
 }
 
+.nav-link:active {
+    background-color: rgb(190, 250, 250);
+    color: black;
+}
+
 .create-btn {
     background-color: darkred;
     color: white;
 }
 .create-btn:hover {
     background-color: rgb(255, 119, 119);
+    color: black;
+}
+.create-btn:active {
+    background-color: rgb(253, 222, 222);
     color: black;
 }
 
@@ -53,4 +62,8 @@
 .greeting-username {
     text-decoration: none;
     color: black;
+}
+
+.active {
+    box-shadow: 2px 2px 1em 2px teal;
 }

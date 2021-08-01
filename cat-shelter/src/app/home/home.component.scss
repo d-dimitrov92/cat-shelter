@@ -42,9 +42,14 @@ p {
     display: inline-block;
 }
 
+.nav-link:hover {
+    background-color: rgb(0, 223, 223);
+    color: black;
+}
+
 .loader {
-    border: 16px solid #f3f3f3; /* Light grey */
-    border-top: 16px solid #3498db; /* Blue */
+    border: 24px solid rgba(139, 0, 0, 0.568);
+    border-top: 24px solid rgba(0, 128, 128, 0.74);
     border-radius: 50%;
     width: 80px;
     height: 80px;
