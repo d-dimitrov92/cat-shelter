@@ -1,14 +1,20 @@
-<div class="cat-card" *ngFor="let cat of catResults">
-    <div class="image-container">
-        <img src={{cat.imgUrl}} alt="cat img" class="cat-img" width="240" height="160">
-    </div>
-    <div class="upper">
-        <p>{{cat.name}}</p>
-    </div>
+<div *ngIf="!catResults" class="loader"></div>
 
-    <div class="lower">
-        <p>Age: {{cat.age}}</p>
+<h1 *ngIf="catResults.length == 0">There are no cats in the cat shelter. You can give us a cat by clicking <a routerLink="/create-cat">here</a>.</h1>
+
+<h1 *ngIf="catResults.length > 0">Here are all the cats in the cat shelter</h1>
+<div class="cats-container">
+    <div class="cat-card" *ngFor="let cat of catResults">
+        <div class="image-container">
+            <img src={{cat.imgUrl}} alt="cat img" class="cat-img" width="240" height="160">
+        </div>
+        <div class="upper">
+            <p>{{cat.name}}</p>
+        </div>
+
+        <div class="lower">
+            <p>Age: {{cat.age}}</p>
+        </div>
+        <a class="nav-link">Details</a>
     </div>
-<a class="nav-link">Details</a>
 </div>
-<div class="loader" *ngIf="!catResults"></div>

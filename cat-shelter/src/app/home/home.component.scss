@@ -1,3 +1,17 @@
+.cats-container {
+    display: flex;
+    justify-content: center;
+}
+
+h1 {
+    text-align: center;
+}
+
+a {
+    color: darkred;
+    text-decoration: none;
+}
+
 .cat-card {
     display: inline-block;
     margin: 3rem 3rem;

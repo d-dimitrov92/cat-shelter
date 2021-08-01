@@ -1,0 +1,59 @@
+.form-container {
+    text-align: center;
+}
+
+form {
+    display: inline-block;
+}
+
+p {
+    font-size: 22px;
+    font-weight: 600;
+}
+
+h1 {
+    margin: 0;
+    display: block;
+    font-size: 46px;
+}
+
+form input {
+    margin-left: 12px;
+    font-size: 22px;
+    text-align: left;
+}
+
+form.form label {
+    display: flex;
+    justify-content: center;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+form input.submit {
+    color: white;
+    background-color: darkolivegreen;
+    font-size: 24px;
+    font-weight: 700;
+    margin: 5px;
+    padding: 4px 24px;
+    text-decoration: none;
+    border: black solid 2px;
+    border-radius: 8px;
+}
+
+form input.submit:hover {
+    background-color: darkseagreen;
+    color: black;
+}
+
+form input.submit:active {
+    background-color: darkolivegreen;
+    color: white;
+}
+
+.form-box {
+    margin: 16px;
+    display: flex;
+    justify-content: right;
+}

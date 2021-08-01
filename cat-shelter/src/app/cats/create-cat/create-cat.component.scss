@@ -1,6 +1,11 @@
 .form-container {
     text-align: center;
 }
+
+form {
+    display: inline-block;
+}
+
 p {
     font-size: 22px;
     font-weight: 600;
@@ -11,7 +16,8 @@ h1 {
     font-size: 46px;
 }
 
-form input, form textarea{
+form input {
+    margin-left: 12px;
     font-size: 22px;
     text-align: left;
 }
@@ -40,16 +46,14 @@ form input.submit:active {
     color:white;
 }
 
-.gender-box{
-    box-sizing: border-box;
-    overflow: hidden;
+#gender-box, #castrated-box{
+    justify-content: center;
 }
 
 .form-box {
     margin: 16px;
     display: flex;
-    justify-content: center;
-    vertical-align: center;
+    justify-content: right;
 }
 
 #radio-male, #radio-female, #radio-yes, #radio-no {

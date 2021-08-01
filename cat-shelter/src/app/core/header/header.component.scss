@@ -44,6 +44,9 @@
     background-color: rgb(253, 222, 222);
     color: black;
 }
+.create-btn.active {
+    box-shadow: 2px 2px 1em 2px darkred;
+}
 
 .login-btn,
 .register-btn,

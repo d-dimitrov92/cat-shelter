@@ -8,7 +8,7 @@ import { ICat } from '../shared';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent {
-  
+
   cats: ICat[] | undefined;
   catResults: any;
 
