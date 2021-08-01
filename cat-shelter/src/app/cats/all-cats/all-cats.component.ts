@@ -8,22 +8,22 @@ import { CatsService } from '../cats.service';
   styleUrls: ['./all-cats.component.scss']
 })
 export class AllCatsComponent {
-  cats: ICat[] | undefined;
-  catResults: any;
+  // cats: ICat[] | undefined;
+  // catResults: any;
 
-  constructor(private catsService: CatsService) {
-    this.fetchCats();
-  }
+  // constructor(private catsService: CatsService) {
+  //   this.fetchCats();
+  // }
 
-  fetchCats(): void {
-    this.cats = undefined;
-    this.catsService.loadCats().subscribe(
-      cats => this.cats = cats,
-      (err) => console.log(err),
-      () => {
-        this.catResults = Object.values(this.cats!)[0];
-        console.log(this.catResults);
-      }
-    )
-  }
+  // fetchCats(): void {
+  //   this.cats = undefined;
+  //   this.catsService.loadCats().subscribe(
+  //     cats => this.cats = cats,
+  //     (err) => console.log(err),
+  //     () => {
+  //       this.catResults = Object.values(this.cats!)[0];
+  //       console.log(this.catResults);
+  //     }
+  //   )
+  // }
 }

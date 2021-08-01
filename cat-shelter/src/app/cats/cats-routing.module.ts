@@ -13,10 +13,10 @@ const routes: Routes = [
         path: 'details/:id',
         component: CatDetailsComponent
     },
-    {
-        path: 'all-cats',
-        component: AllCatsComponent
-    }
+    // {
+    //     path: 'all-cats',
+    //     component: AllCatsComponent
+    // }
 ];
 
 @NgModule({

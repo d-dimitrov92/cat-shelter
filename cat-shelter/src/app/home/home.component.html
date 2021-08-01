@@ -1,1 +1,14 @@
-<p>home works!</p>
+<div class="cat-card" *ngFor="let cat of catResults">
+    <div class="image-container">
+        <img src={{cat.imgUrl}} alt="cat img" class="cat-img" width="240" height="160">
+    </div>
+    <div class="upper">
+        <p>{{cat.name}}</p>
+    </div>
+
+    <div class="lower">
+        <p>Age: {{cat.age}}</p>
+    </div>
+<a class="nav-link">Details</a>
+</div>
+<div class="loader" *ngIf="!catResults"></div>
