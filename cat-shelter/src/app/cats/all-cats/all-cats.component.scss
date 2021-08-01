@@ -1,0 +1,15 @@
+.cat-card {
+    display: inline-block;
+    margin: 3rem 3rem;
+    padding: 1rem 1rem;
+    border: 2px solid black;
+    border-radius: 8px;
+    box-shadow: 2px 2px 1.5em 2px black;
+    min-width: 8rem;
+    min-height: 10rem;
+    text-align: center;
+}
+
+p {
+    margin: 0;
+}

@@ -3,6 +3,7 @@ export interface ICat {
     mainColor: string,
     gender: string,
     age: number,
+    imgUrl: string,
     isCastrated: boolean,
     whoGave: {},
     createdAt: Date

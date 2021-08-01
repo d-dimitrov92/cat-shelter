@@ -1,10 +1,12 @@
-<div class="cat-card">
+<div class="cat-card" *ngFor="let cat of catResults">
     <div class="upper">
-        <p></p>
+        <p>{{cat.name}}</p>
     </div>
 
     <div class="lower">
-        <p></p>
+        <p>{{cat.age}}</p>
+        <p>{{cat.mainColor}}</p>
+        <p>{{cat.gender}}</p>
     </div>
 
 </div>
