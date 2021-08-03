@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ICat } from 'src/app/shared';
+import { ICat } from 'src/app/shared/interfaces';
 import { CatsService } from '../cats.service';
 
 @Component({

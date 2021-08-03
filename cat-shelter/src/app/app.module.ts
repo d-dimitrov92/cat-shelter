@@ -9,6 +9,8 @@ import { AboutComponent } from './about/about.component';
 import { CoreModule } from './core/core.module';
 import { CatsModule } from './cats/cats.module';
 import { UserModule } from './user/user.module';
+import { HttpClientModule } from '@angular/common/http';
+import { CatsService } from './cats/cats.service';
 
 @NgModule({
   declarations: [
@@ -19,12 +21,15 @@ import { UserModule } from './user/user.module';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     CoreModule,
     UserModule,
-    CatsModule
+    CatsModule,
+    HttpClientModule,
+    AppRoutingModule
   ],
-  providers: [],
+  providers: [
+    CatsService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

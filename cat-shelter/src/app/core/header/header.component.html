@@ -3,9 +3,9 @@
         <a routerLink="/home" routerLinkActive="active" class="home-btn nav-link">Home</a>
         <a routerLink="/about" routerLinkActive="active" class="nav-link">About</a>
         <a routerLink="/create-cat" routerLinkActive="active" class="create-btn nav-link">Give Us a Cat</a>
-        <a class="logout-btn nav-link">Logout</a>
+        <a class="logout-btn nav-link" (click)="logout()">Logout</a>
         <a routerLink="/register" routerLinkActive="active" class="register-btn nav-link">Register</a>
         <a routerLink="/login" routerLinkActive="active" class="login-btn nav-link">Login</a>
-        <a class="greeting">Hello, <a class="greeting-username" routerLink="/profile">username</a></a>
+        <a class="greeting">Hello, <a class="greeting-username" routerLink="/profile">{{username}}</a></a>
     </nav>
 </div>

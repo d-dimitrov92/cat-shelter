@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { CatsService } from '../cats/cats.service';
-import { ICat } from '../shared';
+import { ICat } from '../shared/interfaces';
 
 @Component({
   selector: 'app-home',

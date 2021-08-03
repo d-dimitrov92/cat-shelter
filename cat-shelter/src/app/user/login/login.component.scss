@@ -30,7 +30,7 @@ form.form label {
     font-weight: bold;
 }
 
-form input.submit {
+button {
     color: white;
     background-color: darkolivegreen;
     font-size: 24px;
@@ -42,12 +42,12 @@ form input.submit {
     border-radius: 8px;
 }
 
-form input.submit:hover {
+button:hover {
     background-color: darkseagreen;
     color: black;
 }
 
-form input.submit:active {
+button:active {
     background-color: darkolivegreen;
     color: white;
 }
@@ -56,4 +56,18 @@ form input.submit:active {
     margin: 16px;
     display: flex;
     justify-content: right;
+}
+
+.error {
+    font-size: 1.2rem;
+    color: darkred;
+}
+
+a {
+    text-decoration: none;
+    color: teal;
+}
+
+.acc {
+    font-size: 1.2rem;
 }

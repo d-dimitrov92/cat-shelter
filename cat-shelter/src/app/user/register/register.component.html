@@ -2,23 +2,38 @@
     <h1>Register</h1>
     <p>fill the form with your information, please</p>
     <br><br>
-    <form class="form" action="" method="POST">
+    <form [formGroup]="form" class="form" action="" method="POST" (ngSubmit)="register()">
 
         <div class="form-box input-username">
             <label for="username">Username:</label>
-            <input autofocus type="text" name="username">
+            <input autofocus type="text" name="username" formControlName="username">
         </div>
+        <ng-container *ngIf="form.get('username')?.touched">
+            <p *ngIf="form.get('username')?.errors?.required" class="error">Username is required</p>
+            <p *ngIf="form.get('username')?.errors?.minlength" class="error">Username must be at least 3 characters</p>
+        </ng-container>
 
         <div class="form-box input-pass">
             <label for="password">Password:</label>
-            <input type="password" name="password">
+            <input type="password" name="password" formControlName="password">
         </div>
+        <ng-container *ngIf="form.get('password')?.touched">
+            <p *ngIf="form.get('password')?.errors?.required" class="error">Password is required</p>
+            <p *ngIf="form.get('password')?.errors?.minlength" class="error">Password must be at least 3 characters</p>
+            
+        </ng-container>
 
         <div class="form-box input-repass">
             <label for="rePass">Repeat password:</label>
-            <input type="password" name="rePass">
+            <input type="password" name="rePass" formControlName="rePass">
         </div>
+        <ng-container *ngIf="form.get('rePass')?.touched">
+            <p *ngIf="form.get('rePass')?.errors?.required" class="error">Repeat password is required</p>
+            <p *ngIf="form.get('rePass')?.errors?.sameValue" class="error">Passwords dont match</p>
+        </ng-container>
 
-        <input class="submit" type="submit" value="Register">
+        <button>Register</button>
+
+        <p class="acc">Have an account? <a routerLink="/login"> Login</a></p>
     </form>
 </div>

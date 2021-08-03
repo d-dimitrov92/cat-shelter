@@ -1,0 +1,47 @@
+.not-found-container {
+    display: flex;
+    justify-content: center;
+    max-width: 100vw;
+    min-height: 70vh;
+    background-color: lightgrey;
+}
+
+.content {
+    background-image: url("../../assets/cat-protection-404.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-width: 90vw;
+    min-height: 90vh;
+}
+
+.text {
+    text-align: center;
+}
+
+.oops {
+    color: rgba(0, 0, 0, 0.52);
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-size: 9rem;
+}
+
+.message {
+    font-size: 1.5rem;
+    color: rgba(0, 0, 0, 0.575);
+}
+
+.btn {
+    font-size: 2rem;
+    border: black 2px solid;
+    border-radius: 8px;
+    padding: 4px 8px;
+    color: rgba(0, 0, 0, 0.561);
+    background-color: rgba(0, 0, 0, 0.123);
+    text-decoration: none;
+}
+
+.btn:hover {
+    color: rgb(197, 197, 197);
+    background-color: rgba(0, 0, 0, 0.774);
+}

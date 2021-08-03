@@ -2,18 +2,28 @@
     <h1>Login</h1>
     <p>fill the form with your information, please</p>
     <br><br>
-    <form class="form" action="" method="POST">
+    <form #form="ngForm" class="form" action="" method="POST" (ngSubmit)="login(form)">
 
         <div class="form-box input-username">
             <label for="username">Username:</label>
-            <input autofocus type="text" name="username">
+            <input #usernameInput="ngModel" ngModel type="text" name="username" required [minlength]="3">
         </div>
+        <ng-container *ngIf="usernameInput.touched">
+            <p *ngIf="usernameInput.errors?.required" class="error">Username is required</p>
+            <p *ngIf="usernameInput.errors?.minlength" class="error">Username must be at least 3 characters</p>
+        </ng-container>
 
         <div class="form-box input-pass">
             <label for="password">Password:</label>
-            <input type="password" name="password">
+            <input #passwordInput="ngModel" ngModel type="password" name="password" [minlength]="3" required>
         </div>
+        <ng-container *ngIf="passwordInput.touched">
+            <p *ngIf="passwordInput.errors?.required" class="error">Password is required</p>
+            <p *ngIf="passwordInput.errors?.minlength" class="error">Password must be at least 3 characters</p>
+        </ng-container>
 
-        <input class="submit" type="submit" value="Login">
+        <button>Login</button>
+        
+        <p class="acc">Don't have an account? <a routerLink="/register"> Register</a></p>
     </form>
 </div>
