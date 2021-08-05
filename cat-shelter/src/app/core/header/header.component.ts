@@ -25,6 +25,9 @@ export class HeaderComponent {
 
   logout(): void {
     this.userService.logout();
+    this.userService.user = null;
+    console.log(this.userService.user);
+
     this.router.navigate(['/']);
   }
 }

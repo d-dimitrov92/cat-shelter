@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { tap } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
@@ -9,25 +9,44 @@ const apiURL = environment.apiURL;
 @Injectable()
 export class UserService {
 
-  user: IUser | undefined;
+  user: IUser | null | undefined = undefined;
+  options: Object;
 
   get isLogged(): boolean {
     return !!this.user;
   }
 
-  constructor(private http: HttpClient) { }
-
-  login(username: string, password: string): void {
-
+  constructor(private http: HttpClient) {
+    this.options = {
+      headers: new HttpHeaders({
+        'X-Parse-Application-Id': 'kLnJOFSBaTMzpQSdw77drGZ8k6WUWAMVzYQxyaD9',
+        'X-Parse-REST-API-Key': 'pqL2caEE2JnftImUN7oMUvprHFskzIiNAM0OZhkg',
+        'X-Parse-Revocable-Session': '1',
+        'Content-Type': 'application/json'
+      }),
+      withCredentials: true
+    }
   }
 
-  register(data: { username: string, email: string, password: string }) {
-    return this.http.post<IUser>(`${apiURL}/users`, data, { withCredentials: true }).pipe(
+  login(data: { email: string; password: string }) {
+    return this.http.post<IUser>(`${apiURL}/login`, data, this.options).pipe(
       tap((user) => this.user = user)
     );
   }
 
-  logout(): void {
+  register(data: { username: string, email: string, password: string }) {
+    return this.http.post<IUser>(`${apiURL}/users`, data, this.options).pipe(
+      tap((user) => this.user = user)
+    );
+  }
 
+  getProfileInfo(id: string) {
+    return this.http.get<IUser>(`${apiURL}/users/${id}`, this.options).pipe(
+      tap((user) => this.user = user)
+    );
+  }
+
+  logout() {
+    return this.http.get(`${apiURL}/logout`, this.options);
   }
 }

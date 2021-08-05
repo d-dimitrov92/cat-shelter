@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { sameValueAsFactory } from 'src/app/shared/validators';
+import { Subject } from 'rxjs';
+import { emailValidator, sameValueAsFactory } from 'src/app/shared/validators';
 import { UserService } from '../user.service';
 
 @Component({
@@ -12,6 +13,7 @@ import { UserService } from '../user.service';
 export class RegisterComponent {
 
   form: FormGroup;
+  killSubscription = new Subject();
 
   constructor(
     private fb: FormBuilder,
@@ -20,15 +22,17 @@ export class RegisterComponent {
   ) {
     this.form = this.fb.group({
       username: ['', [Validators.required, Validators.minLength(3)]],
-      password: ['', [Validators.required, Validators.minLength(4)]],
-      // rePass: ['', [Validators.required, sameValueAsFactory(
-      //   () => this.form?.get('password'), this.killSubscription
-      // )]]
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', [Validators.required, Validators.minLength(3)]],
+      rePass: ['', [Validators.required, sameValueAsFactory(
+        () => this.form?.get('password'), this.killSubscription
+      )]]
     });
   }
 
   register(): void {
     if (this.form.invalid) { return; }
+    
     this.userService.register(this.form.value).subscribe({
       next: () => {
         this.router.navigate(['/']);

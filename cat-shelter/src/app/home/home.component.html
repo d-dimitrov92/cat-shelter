@@ -1,8 +1,8 @@
 <div *ngIf="!catResults" class="loader"></div>
 
-<h1 *ngIf="catResults.length == 0">There are no cats in the cat shelter. You can give us a cat by clicking <a routerLink="/create-cat">here</a>.</h1>
+<h1 *ngIf="catResults?.length == 0">There are no cats in the cat shelter. You can give us a cat by clicking <a routerLink="/create-cat">here</a>.</h1>
 
-<h1 *ngIf="catResults.length > 0">Here are all the cats in the cat shelter</h1>
+<h1 *ngIf="catResults?.length > 0">Here are all the cats in the cat shelter</h1>
 <div class="cats-container">
     <div class="cat-card" *ngFor="let cat of catResults">
         <div class="image-container">

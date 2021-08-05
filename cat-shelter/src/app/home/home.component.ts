@@ -18,13 +18,14 @@ export class HomeComponent {
 
   fetchCats(): void {
     this.cats = undefined;
-    this.catsService.loadCats().subscribe(
-      cats => this.cats = cats,
-      (err) => console.log(err),
-      () => {
-        this.catResults = Object.values(this.cats!)[0];
+    this.catsService.loadCats().subscribe({
+      next: (cats) => this.cats = cats,
+      error: (err) => console.log(err),
+      complete: () => {
+        this.catResults = Object.values(this.cats!)[0] || [];
         console.log(this.catResults);
       }
+    }
     )
   }
 }

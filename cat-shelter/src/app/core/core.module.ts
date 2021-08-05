@@ -4,6 +4,7 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
+import { UserService } from '../user/user.service';
 
 
 
@@ -21,7 +22,9 @@ import { HttpClientModule } from '@angular/common/http';
     HeaderComponent,
     FooterComponent
   ],
-  providers: []
+  providers: [
+    UserService
+  ]
 })
 
 export class CoreModule { }

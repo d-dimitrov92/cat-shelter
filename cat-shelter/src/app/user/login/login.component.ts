@@ -18,8 +18,11 @@ export class LoginComponent {
 
   login(form: NgForm): void {
     if (form.invalid) { return; }
-    const { email, password } = form.value;
-    //this.userService.login();
+
+    this.userService.login(form.value);
+    console.log(this.userService.user);
+    
+
     const redirectUrl = this.activatedRoute.snapshot.queryParams.redirectUrl || '/';
     this.router.navigate([redirectUrl]);
   }
