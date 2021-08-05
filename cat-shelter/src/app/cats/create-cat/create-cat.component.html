@@ -2,7 +2,7 @@
     <h1>Give Us a Cat</h1>
     <p>fill the form with cat information, please</p>
     <br><br>
-    <form class="form" action="" method="POST">
+    <form #form="ngForm" (ngubmit)="createCat(form)" class="form" action="" method="POST">
         <div class="form-box input-name">
             <label for="name">Name:</label>
             <input autofocus type="text" name="name">

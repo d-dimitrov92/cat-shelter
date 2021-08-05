@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiURL: 'https://parseapi.back4app.com'
+  apiURL: 'localhost:8080'
 };
 
 /*

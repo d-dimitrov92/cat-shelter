@@ -1,0 +1,253 @@
+* {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+}
+
+nav {
+    background-color: lightgray;
+}
+
+body {
+    margin: 0;
+}
+
+.profile-btn {
+    border: none;
+    
+}
+
+nav {
+    display: block;
+    margin: auto;
+}
+nav a {
+    text-decoration: none;
+    color:black;
+    background-color: rgb(251, 225, 163);
+    border: black solid 2px;
+    border-radius: 8px;
+    font-size: 24px;
+    margin: 5px;
+    padding: 4px 8px;
+    display: inline-block;
+}
+nav a:hover{
+    color: white;
+    background-color: rgb(180, 126, 0);
+}
+nav a:active{
+    color: white;
+    background-color: rgb(129, 90, 0);
+}
+nav span {
+    display: block;
+    margin: 0;
+    padding: 4px;
+    font-size: 24px;
+} 
+
+.main-card {
+    display: inline-block;
+    background-color: rgb(233, 233, 233);
+    border: black solid 2px;
+    border-radius: 4px;
+    box-shadow: 2px 2px 1.5em 2px black;
+    margin: 12px;
+    padding: 12px;
+}
+.main-card:hover{
+    border: rgb(88, 0, 0) solid 2px;
+    box-shadow: 2px 2px 1.5em 2px rgb(88, 0, 0);
+}
+.cat-img {
+    position: relative;
+}
+.name-details {
+    flex: 0 0 10em;
+    position: relative;
+}
+
+.special {
+    background-color: rgb(139, 0, 0);
+    color: white;
+}
+.special:hover{
+    background-color: rgb(246, 132, 132);
+    color: black;
+}
+.special:active{
+    background-color: rgb(0, 0, 0);
+    color: white;
+}
+
+main {
+    display: block;
+}
+
+form input, form textarea{
+    font-size: 22px;
+    text-align: left;
+}
+form.form {
+    display: inline-block;
+}
+form.form label {
+    text-align: right;
+    font-size: 22px;
+    display: block;
+    margin: 32px;
+    font-weight: bold;
+}
+form input.submit {
+    color:white;
+    background-color: darkolivegreen;
+    font-size: 24px;
+    margin: 5px;
+    padding: 4px 8px;
+    text-decoration: none;
+    border: black solid 2px;
+    border-radius: 8px;
+}
+form input.submit:hover {
+    background-color: darkseagreen;
+    color: black;
+}
+form input.submit:active {
+    background-color: darkolivegreen;
+    color:white;
+}
+p {
+    font-size: 20px;
+}
+
+div a {
+    display: inline;
+    color:white;
+    background-color: darkolivegreen;
+    font-size: 24px;
+    margin: 5px;
+    padding: 4px 8px;
+    text-decoration: none;
+    border: black solid 2px;
+    border-radius: 8px;
+}
+div a:hover{
+    color: black;
+    background-color: darkseagreen;
+}
+div a:active{
+    color: white;
+    background-color: darkolivegreen;
+}
+
+.desc-card {
+    display: inline-block;
+}
+
+h3 {
+    margin: auto;
+}
+
+.description {
+    position: relative;
+    padding: 8px;
+    display: inline-block;
+    background-color: rgb(243, 243, 243);
+}
+
+.cat-name{
+    color: rgb(124, 25, 0);
+    font-size: 26px;
+}
+
+.error {
+    animation: fadeOut 2s forwards;
+    animation-delay: 3s;
+    /* display:none; */
+    margin: 2em;
+    padding: 1em;
+    position: absolute;
+    right: 0;
+    width: 20em;
+    border: 2px solid;
+    border-image-slice: 1;
+    border-radius: 1em;
+    color: white;
+    background-color: rgba(245, 31, 120, 0.609);
+    border-color: rgba(255, 0, 0, 0.315);
+}
+
+.delete {
+    background-color: darkred;
+}
+.delete:hover {
+    background-color: rgb(251, 106, 106);
+    color: black;
+}
+.delete:active {
+    background-color: darkred;
+}
+
+
+select {
+    font-size: 24px;
+}
+
+.prev, .next, .goBtn {
+    display: inline-block;
+    text-decoration: none;
+    margin: 8px;
+    margin-top: 24px;
+    padding: 8px;
+    border: black 1px solid;
+    border-radius: 8px;
+    font-size: 24px;
+    color: white;
+    background-color: rgb(65, 24, 0);
+}
+
+.prev:hover, .next:hover, .goBtn:hover {
+    color: rgb(65, 24, 0);
+    background-color: rgb(255, 113, 113);
+}
+
+.prev:active, .next:active, .goBtn:active {
+    color: white;
+    background-color: rgb(65, 24, 0);
+}
+.page {
+    font-size: 24px;
+}
+
+.flex p {
+    display: inline-block;
+}
+
+footer {
+    background-color: lightgray;
+    display: block;
+    padding: 12px;
+    margin: 0;
+    margin-top: 24px;
+    left: 45%;
+}
+
+@-webkit-keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}

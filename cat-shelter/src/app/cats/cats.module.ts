@@ -5,6 +5,7 @@ import { CatDetailsComponent } from './cat-details/cat-details.component';
 import { CreateCatComponent } from './create-cat/create-cat.component';
 import { CatsRoutingModule } from './cats-routing.module';
 import { CatsService } from './cats.service';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -16,7 +17,8 @@ import { CatsService } from './cats.service';
   ],
   imports: [
     CommonModule,
-    CatsRoutingModule
+    CatsRoutingModule,
+    FormsModule
   ],
   providers: [
     CatsService

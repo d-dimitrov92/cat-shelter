@@ -14,6 +14,18 @@
     - Delete cat
 
 
-## Endpoints:
+## API Endpoints:
 
-    In progress
+User related
+
+    Register    >>> POST /users/register
+    Login       >>> POST /users/login
+    Logout      >>> GET /users/logout
+
+Cats related
+
+    All cats       >>> GET    /cats
+    Create cat     >>> POST   /cats
+    Cat Details    >>> GET    /cats/:id
+    Update cat     >>> PUT    /cats/:id
+    Delete cat     >>> DELETE /cats/:id

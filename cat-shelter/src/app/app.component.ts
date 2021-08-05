@@ -10,7 +10,6 @@ import { UserService } from './user/user.service';
 export class AppComponent {
   title = 'cat-shelter';
 
-  id = this.userService.user?.objectId || '';
 
   get isAuthenticating(): boolean {
     return this.userService.user === undefined;
@@ -19,10 +18,10 @@ export class AppComponent {
   constructor(
     private userService: UserService
   ) { 
-    this.userService.getProfileInfo(this.id).subscribe({
-      error: ()=> {
-        this.userService.user = null;
-      }
-    })
+    // this.userService.getProfileInfo(this.id).subscribe({
+    //   error: ()=> {
+    //     this.userService.user = null;
+    //   }
+    // })
   }
 }
