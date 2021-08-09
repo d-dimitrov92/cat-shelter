@@ -1,6 +1,6 @@
 const authController = require('../controllers/authController');
 const homeController = require('../controllers/homeController');
-const catController = require('../controllers/catsController');
+const catsController = require('../controllers/catsController');
 
 module.exports = (app) => {
     app.use('/', homeController);

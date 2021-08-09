@@ -18,6 +18,6 @@ async function start() {
 
 
     app.listen(port, () => {
-        console.log(`Application started at ${process.env.PORT || PORT}`);
+        console.log(`Application started at port:${process.env.PORT || PORT}`);
     });
 }

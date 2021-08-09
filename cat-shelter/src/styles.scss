@@ -7,9 +7,35 @@ html {
     margin: 0 0;
     padding: 0 0;
     min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 body {
+    position: relative;
     margin: 0 0;
     padding: 0 0;
+    min-height: 100vh;
+}
+
+
+.loader {
+    border: 24px solid rgba(139, 0, 0, 0.568);
+    border-top: 24px solid rgba(0, 128, 128, 0.74);
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    animation: spin 2s linear infinite;
+    margin-top: 7rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }

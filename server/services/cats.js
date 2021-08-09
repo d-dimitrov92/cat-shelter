@@ -10,20 +10,20 @@ async function getCatById(id) {
     return await Cat.findById(id).lean();
 }
 
-async function createCat(catData, id) {
+async function createCat(catData) {
     const pattern = new RegExp(`^${catData.name}$`, 'i');
     const existing = await Cat.findOne({ name: { $regex: pattern } });
-    const user = await User.findById(id);
+    //const user = await User.findById(id);
 
     if (existing) {
         throw new Error('A cat with this name already exists.');
     }
 
     const cat = new Cat(catData);
-    user.givenCats.push(cat);
+    //user.givenCats.push(cat);
 
     await cat.save();
-    await user.save();
+   //await user.save();
 
     return cat;
 }

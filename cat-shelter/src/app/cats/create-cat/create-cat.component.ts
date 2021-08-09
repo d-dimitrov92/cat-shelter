@@ -1,3 +1,4 @@
+import { HttpHeaders } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -13,10 +14,12 @@ export class CreateCatComponent {
   constructor(
     private catsService: CatsService,
     private router: Router
-    ) { }
+  ) {  }
 
   createCat(form: NgForm): void {
     if (form.invalid) { return; }
+    console.log(form.value);
+
     this.catsService.saveCat(form.value).subscribe({
       next: () => {
         this.router.navigate(['/'])
@@ -26,5 +29,4 @@ export class CreateCatComponent {
       }
     })
   }
-
 }

@@ -1,12 +1,12 @@
-<div *ngIf="!catResults" class="loader"></div>
+<div *ngIf="!cats" class="loader"></div>
 
-<h1 *ngIf="catResults?.length == 0">There are no cats in the cat shelter. You can give us a cat by clicking <a routerLink="/create-cat">here</a>.</h1>
+<h1 *ngIf="cats?.length == 0">There are no cats in the cat shelter. You can give us a cat by clicking <a routerLink="/create-cat">here</a>.</h1>
 
-<h1 *ngIf="catResults?.length > 0">Here are all the cats in the cat shelter</h1>
+<h1 *ngIf="isCats">Here are all the cats in the cat shelter</h1>
 <div class="cats-container">
-    <div class="cat-card" *ngFor="let cat of catResults">
+    <div class="cat-card" *ngFor="let cat of cats">
         <div class="image-container">
-            <img src={{cat.imgUrl}} alt="cat img" class="cat-img" width="240" height="160">
+            <img src={{cat.imageUrl}} alt="cat img" class="cat-img">
         </div>
         <div class="upper">
             <p>{{cat.name}}</p>
@@ -15,6 +15,6 @@
         <div class="lower">
             <p>Age: {{cat.age}}</p>
         </div>
-        <a class="nav-link">Details</a>
+        <a class="nav-link" [routerLink]="['/details', cat._id]">Details</a>
     </div>
 </div>

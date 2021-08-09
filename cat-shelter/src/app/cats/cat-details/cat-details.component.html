@@ -1,1 +1,29 @@
-<p>cat-details works!</p>
+<div class="desc-card" *ngIf="cat">
+    <div>
+        <h1>Cat name: <span class="cat-name">{{cat.name}}</span></h1>
+        <div class="img-container">
+            <img src="{{cat.imageUrl}}" alt="cat picture here" />
+        </div>
+    </div>
+
+    <div class="box">
+        <h3>Cat Age:</h3>
+        <p class="description">{{cat.age}}</p>
+    </div>
+    <div class="box">
+        <h3>Cat Gender:</h3>
+        <p class="description">{{cat.gender}}</p>
+        <p *ngIf="!cat.gender" class="description">gender</p>
+    </div>
+    <div class="box">
+        <h3>Date of comming:</h3>
+        <p class="description">{{cat.createdAt | date: 'medium'}}</p>
+    </div>
+
+    <div class="buttons">
+        <a class="delete nav-link">Delete</a>
+        <a class="nav-link">Edit</a>
+    </div>
+</div>
+
+<div *ngIf="!cat" class="loader"></div>

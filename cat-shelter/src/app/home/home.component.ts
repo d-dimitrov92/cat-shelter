@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
 import { CatsService } from '../cats/cats.service';
 import { ICat } from '../shared/interfaces';
 
@@ -7,25 +7,26 @@ import { ICat } from '../shared/interfaces';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
+
 export class HomeComponent {
 
   cats: ICat[] | undefined;
-  catResults: any;
+  isCats: boolean = false;
 
   constructor(private catsService: CatsService) {
     this.fetchCats();
   }
 
-  fetchCats(): void {
+  fetchCats() {
     this.cats = undefined;
     this.catsService.loadCats().subscribe({
-      next: (cats) => this.cats = cats,
+      next: cats => this.cats = cats,
       error: (err) => console.log(err),
       complete: () => {
-        this.catResults = Object.values(this.cats!)[0] || [];
-        console.log(this.catResults);
+        if (this.cats!.length > 0) {
+          this.isCats = true;
+        }
       }
-    }
-    )
+    });
   }
 }

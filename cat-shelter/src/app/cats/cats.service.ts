@@ -7,17 +7,18 @@ const API_URL = environment.apiURL;
 
 @Injectable()
 export class CatsService {
-  options: object;
 
-  constructor(private http: HttpClient) {
-    this.options = {}
-  }
+  constructor(private http: HttpClient) { }
 
   loadCats() {
-    return this.http.get<ICat[]>(`${API_URL}/cats`);
+    return this.http.get<any>(`${API_URL}/cats`);
   }
 
   saveCat(data: any) {
-    return this.http.post<ICat>(`${API_URL}/cats`, data, { withCredentials: true });
+    return this.http.post<ICat>(`${API_URL}/cats`, data, { withCredentials: false });
+  }
+
+  loadCat(id: string) {
+    return this.http.get<ICat>(`${API_URL}/cats/${id}`)
   }
 }

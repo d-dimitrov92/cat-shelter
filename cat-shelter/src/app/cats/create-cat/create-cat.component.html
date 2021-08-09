@@ -2,41 +2,28 @@
     <h1>Give Us a Cat</h1>
     <p>fill the form with cat information, please</p>
     <br><br>
-    <form #form="ngForm" (ngubmit)="createCat(form)" class="form" action="" method="POST">
+    <form #form="ngForm" (ngSubmit)="createCat(form)" class="form">
         <div class="form-box input-name">
             <label for="name">Name:</label>
-            <input autofocus type="text" name="name">
+            <input type="text" name="name" ngModel required minlength="3">
         </div>
 
         <div class="form-box input-age">
-            <label for="age">Age:</label>
-            <input type="number" name="age">
-        </div>
-
-        <div class="form-box input-color">
-            <label for="mainColor">Main color:</label>
-            <input type="text" name="mainColor">
+            <label for="age">Age (years):</label>
+            <input type="number" name="age" ngModel required min="0" max="38">
         </div>
 
         <div class="form-box input-img">
             <label for="imageUrl">Image URL:</label>
-            <input type="text" name="imageUrl">
+            <input type="text" name="imageUrl" ngModel required>
         </div>
 
         <div class="form-box" id="gender-box">
-            <p>Gender:</p>
-            <input type="radio" id="radio-male" name="gender" value="Male">
-            <label class="radio-label" for="radio-male">Male</label>
-            <input type="radio" id="radio-female" name="gender" value="Female">
-            <label class="radio-label" for="radio-female">Female</label>
-        </div>
-
-        <div class="form-box" id="castrated-box">
-            <p>Is castrated:</p>
-            <input type="radio" id="radio-yes" name="isCastrated" value="Yes">
-            <label class="radio-label" for="radio-yes">Yes</label>
-            <input type="radio" id="radio-no" name="isCastrated" value="No">
-            <label class="radio-label" for="radio-no">No</label>
+            <label>Gender:</label>
+            <select name="gender" ngModel required>
+                <option value="male">male</option>
+                <option value="female">female</option>
+            </select>
         </div>
         <input class="submit" type="submit" value="Give us this cat">
     </form>

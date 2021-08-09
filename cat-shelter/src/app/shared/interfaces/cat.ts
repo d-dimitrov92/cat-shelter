@@ -1,10 +1,9 @@
 export interface ICat {
+    _id: string,
     name: string,
-    mainColor: string,
-    gender: string,
     age: number,
-    imgUrl: string,
-    isCastrated: boolean,
+    gender: string,
+    imageUrl: string,
     whoGave: {},
     createdAt: Date
 }
